@@ -1,0 +1,118 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #2c3e50;
+    background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+}
+
+.container {
+    text-align: center;
+    background: #d2b48c;
+    padding: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3), inset 0 0 50px rgba(0,0,0,0.2);
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #8b4513;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#display {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #4a2b0f;
+    font-family: 'Courier New', monospace;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.buttons button {
+    font-size: 0.9em;
+    padding: 8px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #8b4513;
+    color: #d2b48c;
+    transition: all 0.3s ease;
+    font-family: 'Georgia', serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.buttons button:hover {
+    background-color: #4a2b0f;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#laps {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+#laps li {
+    background: rgba(139, 69, 19, 0.2);
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 10px;
+    color: #4a2b0f;
+    font-size: 0.9em;
+}
+
+/* Vintage clock hands */
+.container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 80px;
+    background: #4a2b0f;
+    transform-origin: bottom center;
+    transform: translate(-50%, -100%) rotate(0deg);
+    animation: rotate 60s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: translate(-50%, -100%) rotate(0deg); }
+    100% { transform: translate(-50%, -100%) rotate(360deg); }
+}
